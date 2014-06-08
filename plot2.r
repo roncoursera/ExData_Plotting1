@@ -12,10 +12,8 @@ dt=strptime(paste(powdat[,1],powdat[,2]),"%d/%m/%Y %H:%M:%S","UTC")
 
 # write plot to file
 png("plot2.png",width=400, height=400, bg="transparent")
-hist(as.numeric(powdat[,3]),col="red", freq=T,
-    main="Global Active Power",
-    ylab="Frequency",
-    xlab="Global Active Power (kilowatts)")
+plot(dt,as.numeric(powdat[,3]),type='l',
+    ylab="Global Active Power (kilowatts)")
 dev.off()
 
 
