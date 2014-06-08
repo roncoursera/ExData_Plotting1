@@ -16,7 +16,7 @@ dt=strptime(paste(powdat[,1],powdat[,2]),"%d/%m/%Y %H:%M:%S","UTC")
 # to appease overly-literal graders
 
 # file
-png("plot4.png",width=400, height=400, bg="transparent")
+png("plot4.png",width=480, height=480, bg="transparent")
 
 #par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 par(mfrow = c(2, 2))

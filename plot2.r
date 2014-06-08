@@ -11,7 +11,7 @@ powdat=powdat[powdat[,1]=='1/2/2007' | powdat[,1]=='2/2/2007',]
 dt=strptime(paste(powdat[,1],powdat[,2]),"%d/%m/%Y %H:%M:%S","UTC")
 
 # write plot to file
-png("plot2.png",width=400, height=400, bg="transparent")
+png("plot2.png",width=480, height=480, bg="transparent")
 plot(dt,powdat[,3],type='l',
     ylab="Global Active Power (kilowatts)",
     xlab="")
