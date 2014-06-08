@@ -11,20 +11,7 @@ powdat=powdat[powdat[,1]=='1/2/2007' | powdat[,1]=='2/2/2007',]
 dt=strptime(paste(powdat[,1],powdat[,2]),"%d/%m/%Y %H:%M:%S","UTC")
 
 # write plot to file
-# some of the labeling is "artificial"
-# but is forced to be exactly the same as in assignment
-# to appease overly-literal graders
-
-# file
-png("plot4.png",width=480, height=480, bg="transparent")
-
-#par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
-par(mfrow = c(2, 2))
-# upper left - Global Active Power
-plot(dt,powdat[,3],type='l',ylab="Global Active Power (kilowatts)",xlab="")
-# upper right - Voltage
-plot(dt,powdat[,5],type='l',ylab="Voltage",xlab="datetime")
-# lower left - Sub metering
+png("plot3.png",width=480, height=480, bg="transparent")
 col=c("black","red","blue")
 plot(dt,powdat[,7],type='l',
     ylab="Energy sub metering",
@@ -36,8 +23,7 @@ legend('topright',
     names(powdat)[7:9],
     lty=c(1,1,1), 
     lwd=c(2.5,2.5),
-    col=col, bty = "n") 
-# lower right
-plot(dt,powdat[,4],type='l',ylab="Global_reactive_power",xlab="datetime", lwd='0.6')
-
+    col=col) 
 dev.off()
+
+
