@@ -19,6 +19,11 @@ plot(dt,powdat[,7],type='l',
     col=col[1])
 lines(dt,powdat[,8],type='l',col=col[2])
 lines(dt,powdat[,9],type='l',col=col[3])
+legend('topright',
+    names(powdat)[7:9],
+    lty=c(1,1,1), 
+    lwd=c(2.5,2.5),
+    col=col) 
 dev.off()
 
 
