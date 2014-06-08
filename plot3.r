@@ -11,11 +11,14 @@ powdat=powdat[powdat[,1]=='1/2/2007' | powdat[,1]=='2/2/2007',]
 dt=strptime(paste(powdat[,1],powdat[,2]),"%d/%m/%Y %H:%M:%S","UTC")
 
 # write plot to file
-png("plot1.png",width=400, height=400, bg="transparent")
-hist(powdat[,3],col="red", freq=T,
-    main="Global Active Power",
-    ylab="Frequency",
-    xlab="Global Active Power (kilowatts)")
+png("plot3.png",width=400, height=400, bg="transparent")
+col=c("black","red","blue")
+plot(dt,powdat[,7],type='l',
+    ylab="Energy sub metering",
+    xlab="",
+    col=col[1])
+lines(dt,powdat[,8],type='l',col=col[2])
+lines(dt,powdat[,9],type='l',col=col[3])
 dev.off()
 
 
